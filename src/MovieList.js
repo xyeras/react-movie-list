@@ -22,11 +22,15 @@ const MovieList = ({movies}) => {
             {movies.map((movie, index) => {
                 return (
                 <li className='list-group-item' key={index}>
-                    <a
-                    href='javascript:void(0)'
+                    <a href={movie.imdbLink} rel='noreferrer' target='_blank'>{movie.name}</a>
+
+
+
+
+                    <button btn btn-primary btn-sm
                     onClick={() => showDetails(movie.id)}>
-                    {movie.name}
-                    </a>
+                    Description
+                    </button>
                 </li>
                 );
             })}
