@@ -1,3 +1,4 @@
+
 let movies = [
     {
         id: 0,
@@ -77,3 +78,4 @@ const MovieList = ({movies}) => {
     );
 
 };
+
