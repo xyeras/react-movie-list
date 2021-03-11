@@ -1,5 +1,3 @@
-
-
 const MovieList = ({movies}) => {
 
     const showDetails = movieId => {
@@ -21,16 +19,18 @@ const MovieList = ({movies}) => {
                     
             {movies.map((movie, index) => {
                 return (
-                <li className='list-group-item' key={index}>
-                    <a href={movie.imdbLink} rel='noreferrer' target='_blank'>{movie.name}</a>
 
-
-
-
+                <li className='list-group-item text-center' key={index}>
+                    <a href={movie.imdbLink} rel='noreferrer' target='_blank'>{movie.name}</a><br></br>
+                    {movie.genre}<br></br>
+                    {movie.year}<br></br>
+                    {movie.description}<br></br>
+                    <img src={movie.imageLink}></img>
                     <button btn btn-primary btn-sm
                     onClick={() => showDetails(movie.id)}>
                     Description
                     </button>
+
                 </li>
                 );
             })}
