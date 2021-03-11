@@ -1,5 +1,3 @@
-
-
 const MovieList = ({movies}) => {
 
     const showDetails = movieId => {
@@ -21,12 +19,16 @@ const MovieList = ({movies}) => {
                     
             {movies.map((movie, index) => {
                 return (
-                <li className='list-group-item' key={index}>
+                <li className='list-group-item text-center' key={index}>
                     <a
                     href='javascript:void(0)'
                     onClick={() => showDetails(movie.id)}>
                     {movie.name}
-                    </a>
+                    </a><br></br>
+                    {movie.genre}<br></br>
+                    {movie.year}<br></br>
+                    {movie.description}<br></br>
+                    <img src={movie.imageLink}></img>
                 </li>
                 );
             })}
