@@ -2,12 +2,15 @@ import MovieList from './MovieList'
 import './App.css';
 
 const App = () => {
+
+    let title = `Welcome to our movie list!`
   
-  return (
-    <div>
-      <MovieList movies={movies}/>
-    </div>
-  );
+    return (
+        <div>
+            <h1 className="display-4 text-center my-5">{title}</h1>
+            <MovieList movies={movies}/>
+        </div>
+    );
 
 }
 
@@ -68,7 +71,7 @@ let movies = [
     year: '2014',
     genre: 'Action, Adventure, & Sci-Fi', 
     description: 'The world is beset by the appearance of monstrous creatures, but one of them may be the only one who can save humanity.',
-    imdb: 6.4,
+    imdbRating: 6.4,
     imageLink: 'https://m.media-amazon.com/images/M/MV5BZDFmYTM4NzAtNWM0ZC00MGJlLWEyYzQtYzA3ZTFiNzc1YjllXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_UX182_CR0,0,182,268_AL_.jpg',
     imdbLink: 'https://www.imdb.com/title/tt0831387/?ref_=fn_al_tt_1'
 },
@@ -78,7 +81,7 @@ let movies = [
     year: '2013',
     genre: 'Action, Adventure, & Sci-Fi', 
     description: 'As a war between humankind and monstrous sea creatures wages on, a former pilot and a trainee are paired up to drive a seemingly obsolete special weapon in a desperate effort to save the world from the apocalypse.',
-    imdb: 6.9,
+    imdbRating: 6.9,
     imageLink: 'https://m.media-amazon.com/images/M/MV5BMTY3MTI5NjQ4Nl5BMl5BanBnXkFtZTcwOTU1OTU0OQ@@._V1_UX182_CR0,0,182,268_AL_.jpg',
     imdbLink: 'https://www.imdb.com/title/tt1663662/?ref_=rvi_tt'
 },
@@ -88,7 +91,7 @@ let movies = [
     year: '2019',
     genre: 'Action, Adventure, & Drama', 
     description: 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.',
-    imdb: 8.4,
+    imdbRating: 8.4,
     imageLink: 'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX182_CR0,0,182,268_AL_.jpg',
     imdbLink: 'https://www.imdb.com/title/tt4154796/?ref_=rvi_tt'
 },
@@ -98,7 +101,7 @@ let movies = [
     year: '2013',
     genre: 'Action, Adventure, & Sci-Fi', 
     description: 'After the crew of the Enterprise find an unstoppable force of terror from within their own organization, Captain Kirk leads a manhunt to a war-zone world to capture a one-man weapon of mass destruction.',
-    imdb: 7.7,
+    imdbRating: 7.7,
     imageLink: 'https://m.media-amazon.com/images/M/MV5BMTk2NzczOTgxNF5BMl5BanBnXkFtZTcwODQ5ODczOQ@@._V1_UX182_CR0,0,182,268_AL_.jpg',
     imdbLink: 'https://www.imdb.com/title/tt1408101/?ref_=rvi_tt'
 },
@@ -108,7 +111,7 @@ let movies = [
     year: '1993',
     genre: 'Animation, Family, & Fantasy', 
     description: 'Jack Skellington, king of Halloween Town, discovers Christmas Town, but his attempts to bring Christmas to his home causes confusion.',
-    imdb: 8.0,
+    imdbRating: 8.0,
     imageLink: 'https://m.media-amazon.com/images/M/MV5BNWE4OTNiM2ItMjY4Ni00ZTViLWFiZmEtZGEyNGY2ZmNlMzIyXkEyXkFqcGdeQXVyMDU5NDcxNw@@._V1_UX182_CR0,0,182,268_AL_.jpg',
     imdbLink: 'https://www.imdb.com/title/tt0107688/?ref_=rvi_tt'
 },
