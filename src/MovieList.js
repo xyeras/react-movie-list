@@ -34,15 +34,15 @@ const MovieList = ({movies}) => {
                             </a>
                         </th>
                         
-                        <td scope="row">{movie.genre}</td>
+                        <td>{movie.genre}</td>
                         
-                        <td scope="row">{movie.year}</td>
+                        <td>{movie.year}</td>
                         
-                        <td scope="row">
-                            <img src={movie.imageLink}></img>
+                        <td>
+                            <img src={movie.imageLink} alt="movie poster"></img>
                         </td>
                         
-                        <td scope="row">
+                        <td>
                             <button className="btn btn-primary btn-block" onClick={() => showDetails(movie.id)}>Description</button>
                         
                         </td>
