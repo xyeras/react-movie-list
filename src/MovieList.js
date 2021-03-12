@@ -7,37 +7,52 @@ const MovieList = ({movies}) => {
         if (!foundMovie) {
             alert(`Sorry! Could not find your hero!`);
         } else {
-            alert(`${foundMovie.name}: ${foundMovie.description}`)
+            alert(`${foundMovie.description}`)
         }
 
     };
 
     return (
-        <div className="row">
-            <div className="col-6 offset-3">
-                <ul className='list-group'>
-                    
-            {movies.map((movie, index) => {
-                return (
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Poster</th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
 
-                <li className='list-group-item text-center' key={index}>
-                    <a href={movie.imdbLink} rel='noreferrer' target='_blank'>{movie.name}</a><br></br>
-                    {movie.genre}<br></br>
-                    {movie.year}<br></br>
-                    {movie.description}<br></br>
-                    <img src={movie.imageLink}></img>
-                    <button btn btn-primary btn-sm
-                    onClick={() => showDetails(movie.id)}>
-                    Description
-                    </button>
+                {movies.map ((movie,index) => {
+                    return (
+                    <tr>
+                        <th scope="row">
+                            <a href={movie.imdbLink} rel='noreferrer' target='_blank'>
+                                {movie.name}
+                            </a>
+                        </th>
+                        
+                        <td scope="row">{movie.genre}</td>
+                        
+                        <td scope="row">{movie.year}</td>
+                        
+                        <td scope="row">
+                            <img src={movie.imageLink}></img>
+                        </td>
+                        
+                        <td scope="row">
+                            <button className="btn btn-primary btn-block" onClick={() => showDetails(movie.id)}>Description</button>
+                        
+                        </td>
+                    </tr>
 
-                </li>
-                );
-            })}
-
-                </ul>
-            </div>
-        </div>
+                    );
+                })}
+                
+            </tbody>
+        </table>
     );
 
 };
