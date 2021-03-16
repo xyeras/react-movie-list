@@ -1,29 +1,33 @@
+import { useState } from 'react';
+
 const MovieList = ({movies}) => {
+  const showDetails = movieId => {
+    let foundMovie = movies.find(movie => movie.id === movieId);
+      if (!foundMovie) {
+        alert(`Error`);
+      } else {
+        alert(`${foundMovie.name}: ${foundMovie.description}`)
+      };
+};
 
-    const showDetails = movieId => {
-        
-        let foundMovie = movies.find(movie => movie.id === movieId);
+const removeMovie = (showId) => {
+    movies.splice(showId, 1);
+    console.log(movies)
+};
 
-        if (!foundMovie) {
-            alert(`Sorry! Could not find your hero!`);
-        } else {
-            alert(`${foundMovie.name}: ${foundMovie.description}`)
-        }
 
-    };
-
-    return (
+   return (
         <div className="container">
-            <table class="table table-striped text-center">
+            <table className="table table-striped text-center">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
                         <th scope="col">Title</th>
                         <th scope="col">Genre</th>
                         <th scope="col">Year</th>
                         <th scope="col">IMDb Rating</th>
                         <th scope="col">Poster</th>
                         <th scope="col">Details</th>
+                        <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,9 +35,6 @@ const MovieList = ({movies}) => {
                     {movies.map ((movie,index) => {
                         return (
                         <tr>
-
-                            <th>{movie.id}</th>
-
                             <th scope="row">
                                 <a href={movie.imdbLink} rel='noreferrer' target='_blank'>
                                     {movie.name}
@@ -52,7 +53,10 @@ const MovieList = ({movies}) => {
                             
                             <td>
                                 <button className="btn btn-primary btn-block" onClick={() => showDetails(movie.id)}>Description</button>
+                            </td>
                             
+                            <td>
+                                <button className="btn btn-primary btn-block" onClick={() => removeMovie()}>Delete</button>
                             </td>
                         </tr>
 
@@ -63,8 +67,7 @@ const MovieList = ({movies}) => {
             </table>
         </div>
     );
+};                
 
-};
 
 export default MovieList
-
