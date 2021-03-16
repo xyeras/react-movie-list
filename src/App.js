@@ -25,7 +25,21 @@ const App = () => {
     return (
         <div>
             <h1 className="display-4 text-center my-5">{title}</h1>
+
             <MovieForm addNewMovie={addNewMovie} />
+
+            {success ? (
+                <div className='row'>
+                <div className='col-6 offset-3'>
+                    <div class='alert alert-success text-center' role='alert'>
+                    You've successfully added a new movie!
+                    </div>
+                </div>
+                </div>
+            ) : (
+                ''
+            )}
+
             <MovieList movies={movies}/>
         </div>
     );
