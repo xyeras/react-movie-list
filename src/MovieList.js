@@ -1,8 +1,6 @@
-import { useState } from 'react';
-
-const MovieList = ({movies}) => {
-  const showDetails = movieId => {
-    let foundMovie = movies.find(movie => movie.id === movieId);
+const MovieList = ({moviesData}) => {
+  const showDetails = movieName => {
+    let foundMovie = moviesData.find(movie => moviesData.name === movieName);
       if (!foundMovie) {
         alert(`Error`);
       } else {
@@ -10,10 +8,13 @@ const MovieList = ({movies}) => {
       };
 };
 
-const removeMovie = (showId) => {
-    movies.splice(showId, 1);
-    console.log(movies)
-};
+    const removeMovie = (movieName) => {
+        let filteredMovies = moviesData.filter(movie => {
+            return movie.name !== movieName;
+        });
+        moviesData = filteredMovies;
+        console.log(moviesData);
+    };
 
 
    return (
@@ -21,6 +22,7 @@ const removeMovie = (showId) => {
             <table className="table table-striped text-center">
                 <thead>
                     <tr>
+                        {/* <th scope="col">ID</th> */}
                         <th scope="col">Title</th>
                         <th scope="col">Genre</th>
                         <th scope="col">Year</th>
@@ -32,9 +34,12 @@ const removeMovie = (showId) => {
                 </thead>
                 <tbody>
 
-                    {movies.map ((movie,index) => {
+                    {moviesData.map ((movie,index) => {
                         return (
                         <tr>
+
+                            {/* <th>{movie.id}</th> */}
+
                             <th scope="row">
                                 <a href={movie.imdbLink} rel='noreferrer' target='_blank'>
                                     {movie.name}
@@ -52,11 +57,11 @@ const removeMovie = (showId) => {
                             </td>
                             
                             <td>
-                                <button className="btn btn-primary btn-block" onClick={() => showDetails(movie.id)}>Description</button>
+                                <button className="btn btn-primary btn-block" onClick={() => showDetails(movie.name)}>Description</button>
                             </td>
                             
                             <td>
-                                <button className="btn btn-primary btn-block" onClick={() => removeMovie()}>Delete</button>
+                                <button className="btn btn-primary btn-block" onClick={() => removeMovie(movie.name)}>Delete</button>
                             </td>
                         </tr>
 
