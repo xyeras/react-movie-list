@@ -17,7 +17,7 @@ const MovieList = ({movies}) => {
             <table class="table table-striped text-center">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
+                        {/* <th scope="col">ID</th> */}
                         <th scope="col">Title</th>
                         <th scope="col">Genre</th>
                         <th scope="col">Year</th>
@@ -32,7 +32,7 @@ const MovieList = ({movies}) => {
                         return (
                         <tr>
 
-                            <th>{movie.id}</th>
+                            {/* <th>{movie.id}</th> */}
 
                             <th scope="row">
                                 <a href={movie.imdbLink} rel='noreferrer' target='_blank'>

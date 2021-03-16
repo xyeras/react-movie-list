@@ -1,20 +1,38 @@
+import { useState } from 'react';
+
+import MovieForm from './MovieForm'
 import MovieList from './MovieList'
 import './App.css';
 
 const App = () => {
 
+    const [movies, setMovies] = useState(moviesData);
+    const [success, setSuccess] = useState(false);
+
     let title = `Welcome to our movie list!`
+
+    const addNewMovie = movie => {
+
+        setMovies([...movies, movie]);
+
+        setSuccess(true);
+        setTimeout(() => {
+        setSuccess(false);
+        }, 3000);
+
+    }
   
     return (
         <div>
             <h1 className="display-4 text-center my-5">{title}</h1>
+            <MovieForm addNewMovie={addNewMovie} />
             <MovieList movies={movies}/>
         </div>
     );
 
 }
 
-let movies = [
+let moviesData = [
   {
       id: 0,
       name: "Howl's Moving Castle",
