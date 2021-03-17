@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 const MovieForm = ({ addNewMovie }) => {
   // initialize my variable and state hooks first
-//   const [movieId, setMovieId] = useState('');
+  const [movieId, setMovieId] = useState(9);
   const [movieName, setMovieName] = useState('');
   const [movieYear, setMovieYear] = useState('');
   const [movieGenre, setMovieGenre] = useState('');
@@ -15,8 +15,9 @@ const MovieForm = ({ addNewMovie }) => {
   const handleSubmit = event => {
     event.preventDefault();
     // debugger;
+
     let newMovie = {
-    //   id: movieId,
+      // id: movieId,
       name: movieName,
       year: movieYear,
       genre: movieGenre,

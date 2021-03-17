@@ -1,11 +1,11 @@
 const MovieList = ({movies}) => {
 
-    const showDetails = movieId => {
+    const showDetails = movieName => {
         
-        let foundMovie = movies.find(movie => movie.id === movieId);
+        let foundMovie = movies.find(movie => movie.name === movieName);
 
         if (!foundMovie) {
-            alert(`Sorry! Could not find your hero!`);
+            alert(`Sorry! Could not find your movie!`);
         } else {
             alert(`${foundMovie.name}: ${foundMovie.description}`)
         }
@@ -32,9 +32,9 @@ const MovieList = ({movies}) => {
                         return (
                         <tr>
 
-                            {/* <th>{movie.id}</th> */}
+                            {/* <th>#{movie.id}</th> */}
 
-                            <th scope="row">
+                            <th>
                                 <a href={movie.imdbLink} rel='noreferrer' target='_blank'>
                                     {movie.name}
                                 </a>
@@ -51,7 +51,7 @@ const MovieList = ({movies}) => {
                             </td>
                             
                             <td>
-                                <button className="btn btn-primary btn-block" onClick={() => showDetails(movie.id)}>Description</button>
+                                <button className="btn btn-primary btn-block" onClick={() => showDetails(movie.name)}>Description</button>
                             
                             </td>
                         </tr>
